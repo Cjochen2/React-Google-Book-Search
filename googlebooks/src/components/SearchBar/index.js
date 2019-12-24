@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 
-const SearchBar = ({test}) => {
+const SearchBar = ({results}) => {
     const [searchTerm, setSearchTerm] = useState('')
-    const [results, setResults] = useState('')
 
     const updateSearchTerm = e => {
 
@@ -12,13 +11,16 @@ const SearchBar = ({test}) => {
     }
 
     const query = e => {
+        
         e.preventDefault()
 
         axios.get('https://www.googleapis.com/books/v1/volumes?q=' + searchTerm)
             .then((response) => {
-                setResults(response.data);
+
+                results(response.data.items);
                 setSearchTerm('');
-                test('true')
+                console.log(response.data.items)
+
             })
 
     }

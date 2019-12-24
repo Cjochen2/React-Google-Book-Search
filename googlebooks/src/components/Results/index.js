@@ -1,7 +1,7 @@
 import React from 'react'
 import BookCard from '../BookCard'
 
-const Results = () => {
+const Results = ({data}) => {
 
     return (
         <div>
@@ -12,7 +12,7 @@ const Results = () => {
             </div>
             <div className='row justify-content-center'>
                 <div className='col-8'>
-                    <BookCard />
+                   {data.map((item, index) => <BookCard book = {item} key={index + 1}/>)}
                 </div>
             </div>
         </div>
