@@ -1,4 +1,5 @@
 import React from 'react'
+import {Save, View} from '../Buttons'
 
 const BookCard = ({ book }) => {
 
@@ -8,12 +9,10 @@ const BookCard = ({ book }) => {
         <div className='bookCard container mt-3 mb-5'>
             <div className='row'>
                 <div className='title col-8 text-left pl-0'>{bookInfo.title}</div>
-                <div className='save col-2'>
-                    <button>Save</button>
-                </div>
-                <div className='view col-2'>
-                    <button><a href={bookInfo.infoLink} target="_blank" rel="noopener noreferrer">View</a></button>
-                </div>
+                <View 
+                href={bookInfo.infoLink}
+                />
+                <Save />
             </div>
             <div className='row'>
                 <div className='author'>Written By: {bookInfo.authors}</div>
