@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 
 const SearchPage = () => {
-    const [savedBooks, setSavedBooks] = useState([])
+    // const [savedBooks, setSavedBooks] = useState([])
 
     return (
         <div className='search'>
