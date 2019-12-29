@@ -12,7 +12,7 @@ const BookCard = ({ book }) => {
                     <button>Save</button>
                 </div>
                 <div className='view col-2'>
-                    <button>View</button>
+                    <button><a href={bookInfo.infoLink} target="_blank" rel="noopener noreferrer">View</a></button>
                 </div>
             </div>
             <div className='row'>
