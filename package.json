@@ -1,0 +1,28 @@
+{
+  "name": "react-google-book-search",
+  "version": "1.0.0",
+  "description": "MERN Practice",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cjochen2/React-Google-Book-Search.git"
+  },
+  "author": "Curtis Jochen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cjochen2/React-Google-Book-Search/issues"
+  },
+  "homepage": "https://github.com/Cjochen2/React-Google-Book-Search#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "concurrently": "^5.0.2",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.8.3",
+    "nodemon": "^2.0.2",
+    "path": "^0.12.7"
+  }
+}
