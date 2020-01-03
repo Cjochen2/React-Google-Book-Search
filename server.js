@@ -12,6 +12,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+mongoose.connect('mongodb://localhost/googlebooks', { useNewUrlParser: true, useUnifiedTopology: true })
 // Define API routes here
 
 // Send every other request to the React app
