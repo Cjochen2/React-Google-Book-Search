@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import SearchBar from '../components/SearchBar';
 import Results from '../components/Results';
 
@@ -11,11 +11,16 @@ const SearchPage = () => {
 
     return (
         <div className='search'>
-            <SearchBar 
-            results = {updateResults}
+            <SearchBar
+                results={updateResults}
             />
-            <Results 
-            data= {results} 
+            <div className='row justify-content-center'>
+                <div className='col-8'>
+                    <h1 className='float-left'>Results:</h1>
+                </div>
+            </div>
+            <Results
+                data={results}
             />
         </div>
     )

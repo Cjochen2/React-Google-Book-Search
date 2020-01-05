@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
+import Results from '../components/Results'
 import API from '../utils/API'
 
 
 const SearchPage = () => {
-    // const [savedBooks, setSavedBooks] = useState([])
+    const [savedBooks, setSavedBooks] = useState([])
 
     useEffect(() => {
         getSaved()
@@ -17,9 +18,16 @@ const SearchPage = () => {
     }
 
     return (
-        <div className='search'>
-         <div>Search Page</div>
+        <div className='saved'>
+        <div className='row justify-content-center'>
+            <div className='col-8'>
+                <h1 className='float-left'>Saved Books:</h1>
+            </div>
         </div>
+        <Results
+            data={savedBooks}
+        />
+    </div>
     )
 }
 
