@@ -8,6 +8,6 @@ module.exports = {
     },
     
     saveBook: (req, res) => {
-        console.log(req)
+        console.log(req.body)
     }
 }

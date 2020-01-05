@@ -21,6 +21,7 @@ const SearchPage = () => {
             </div>
             <Results
                 data={results}
+                pageCheck={false}
             />
         </div>
     )

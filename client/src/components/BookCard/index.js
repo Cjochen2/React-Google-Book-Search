@@ -2,12 +2,13 @@ import React from 'react'
 import {Save, View} from '../Buttons'
 import API from '../../utils/API'
 
-const BookCard = ({ book }) => {
+const BookCard = ({ book, pageCheck }) => {
 
-    let bookInfo = book.volumeInfo
+    let bookInfo = (pageCheck) ? book : book.volumeInfo
+    let bookImage = (pageCheck) ? book.image : book.volumeInfo.imageLinks.thumbnail
 
     const saveBook = (data) => {
-        console.log(data)
+        API.saveBook(data)
     }
 
     return (
@@ -28,7 +29,7 @@ const BookCard = ({ book }) => {
             </div>
             <div className='row'>
                 <div className='col-4 text-center'>
-                <img src={bookInfo.imageLinks.thumbnail} alt={bookInfo.title} className="img-fluid img-thumbnail" />
+                <img src={bookImage} alt={bookInfo.title} className="img-fluid img-thumbnail" />
                 </div>
                 <div className='col-8'>
                     {bookInfo.description}

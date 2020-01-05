@@ -6,14 +6,12 @@ import API from '../utils/API'
 const SearchPage = () => {
     const [savedBooks, setSavedBooks] = useState([])
 
-    useEffect(() => {
-        getSaved()
-    })
+    useEffect(() => getSaved(), [] )
 
     const getSaved = () => {
         // console.log("It works like you thought")
         API.getBooks().then( res =>
-            console.log(res.data)
+            setSavedBooks(res.data)
         )
     }
 
@@ -26,6 +24,7 @@ const SearchPage = () => {
         </div>
         <Results
             data={savedBooks}
+            pageCheck={true}
         />
     </div>
     )
