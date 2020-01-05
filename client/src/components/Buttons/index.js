@@ -1,10 +1,10 @@
 import React from 'react'
 
-export const Save = () => {
+export const Save = ({ save, book }) => {
 
     return (
         <div className='save col-2'>
-            <button>Save</button>
+            <button onClick= {() => save(book)}>Save</button>
         </div>
     )
 }

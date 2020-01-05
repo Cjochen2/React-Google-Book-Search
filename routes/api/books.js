@@ -3,6 +3,7 @@ const booksController = require("../../controllers/booksController");
 
 router.route("/")
     .get(booksController.findAll)
+    .post(booksController.saveBook)
 
 
 

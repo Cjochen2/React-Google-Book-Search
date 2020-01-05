@@ -7,4 +7,7 @@ module.exports = {
             .then(book => res.json(book))
     },
     
+    saveBook: (req, res) => {
+        console.log(req)
+    }
 }

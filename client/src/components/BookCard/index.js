@@ -1,9 +1,14 @@
 import React from 'react'
 import {Save, View} from '../Buttons'
+import API from '../../utils/API'
 
 const BookCard = ({ book }) => {
 
     let bookInfo = book.volumeInfo
+
+    const saveBook = (data) => {
+        console.log(data)
+    }
 
     return (
         <div className='bookCard container mt-3 mb-5'>
@@ -12,7 +17,10 @@ const BookCard = ({ book }) => {
                 <View 
                 href={bookInfo.infoLink}
                 />
-                <Save />
+                <Save 
+                save = {saveBook}
+                book = {book}
+                />
             </div>
             {/* Need to generate formula for handling more than one Author */}
             <div className='row'>

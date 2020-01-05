@@ -1,15 +1,15 @@
 import axios from 'axios'
 
 export default {
-    getBooks: function() {
+    getBooks: () => {
         return axios.get("/api/books")
     },
 
-    saveBook: function(bookData) {
-        return axios.get("/api/books", bookData)
+    saveBook: (bookData) => {
+        return axios.post("/api/books", bookData)
     },
 
-    deleteBook: function(id) {
+    deleteBook: (id) => {
         return axios.delete("/api/books/" + id)
     }
 }
