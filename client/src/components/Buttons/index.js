@@ -21,6 +21,11 @@ export const View = ({ href }) => {
 
 }
 
-// export const Delete = () => {
+export const Delete = () => {
 
-// }
+    return(
+    <div className='delete col-2'>
+        <button>Delete</button>
+    </div>
+    )
+}
