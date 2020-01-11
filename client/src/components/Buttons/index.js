@@ -4,7 +4,7 @@ export const Save = ({ save, book }) => {
 
     return (
         <div className='save col-2'>
-            <button onClick= {() => save(book)}>Save</button>
+            <button onClick={() => save(book)}>Save</button>
         </div>
     )
 }
@@ -21,11 +21,11 @@ export const View = ({ href }) => {
 
 }
 
-export const Delete = () => {
+export const Delete = ({ remove, id }) => {
 
-    return(
-    <div className='delete col-2'>
-        <button>Delete</button>
-    </div>
+    return (
+        <div className='delete col-2'>
+            <button onClick={() => remove(id)}>Delete</button>
+        </div>
     )
 }

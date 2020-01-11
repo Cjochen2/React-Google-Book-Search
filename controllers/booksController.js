@@ -13,27 +13,25 @@ module.exports = {
 
 
         db.Book
-            .find({ title: bookInfo.title, author: bookInfo.author })
-            .then((foundItem) => {
-                console.log(foundItem)
-                if (!foundItem) {
-                    db.Book
-                        .insert({
-                            title: bookInfo.title,
+            .create({
+                id: req.body.id,
 
-                            author: bookInfo.author,
+                title: bookInfo.title,
 
-                            description: bookInfo.description,
+                author: bookInfo.authors,
 
-                            image: bookInfo.imageLinks.thumbnail,
+                description: bookInfo.description,
 
-                            infoLink: bookInfo.infoLink
-                        })
-                        .then( res.json("Book Saved!"))
-                } else {
-                    res.json("You have already saved this book to your collection!")
-                }
+                image: bookInfo.imageLinks.thumbnail,
+
+                infoLink: bookInfo.infoLink
             })
-    }
+            .then(res.json("Book Successfully Saved"))
+    },
 
+    remove: (req, res) => {
+        db.Book
+            .deleteOne({id: req.params.id})
+            .then(res.json("Book Deleted Successfully"))
+    }
 }

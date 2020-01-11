@@ -3,7 +3,7 @@ import Results from '../components/Results'
 import API from '../utils/API'
 
 
-const SearchPage = () => {
+const SavedPage = () => {
     const [savedBooks, setSavedBooks] = useState([])
 
     useEffect(() => getSaved(), [] )
@@ -30,4 +30,4 @@ const SearchPage = () => {
     )
 }
 
-export default SearchPage
+export default SavedPage
