@@ -18,7 +18,7 @@ module.exports = {
 
                 title: bookInfo.title,
 
-                author: bookInfo.authors,
+                authors: bookInfo.authors,
 
                 description: bookInfo.description,
 

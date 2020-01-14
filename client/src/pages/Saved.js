@@ -9,8 +9,9 @@ const SavedPage = () => {
     useEffect(() => getSaved(), [] )
 
     const getSaved = () => {
-        // console.log("It works like you thought")
-        API.getBooks().then( res =>
+        
+        API.getBooks()
+        .then( res =>
             setSavedBooks(res.data)
         )
     }
@@ -25,6 +26,7 @@ const SavedPage = () => {
         <Results
             data={savedBooks}
             pageCheck={true}
+            getSaved={getSaved}
         />
     </div>
     )

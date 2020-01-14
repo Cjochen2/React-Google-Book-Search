@@ -2,7 +2,7 @@ import React from 'react'
 import BookCard from '../BookCard'
 
 
-const Results = ({ data, pageCheck }) => {
+const Results = ({ data, pageCheck, getSaved }) => {
 
 
 
@@ -10,7 +10,7 @@ const Results = ({ data, pageCheck }) => {
         <div>
             <div className='row justify-content-center'>
                 <div className='col-8'>
-                    {data.map((item, index) => <BookCard book={item} key={index + 1} pageCheck={pageCheck}/>)}
+                    {data.map((item, index) => <BookCard book={item} key={index + 1} pageCheck={pageCheck} getSaved={getSaved} />)}
                 </div>
             </div>
         </div>
