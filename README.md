@@ -8,23 +8,20 @@ This application utilizes the Google-Books-API so that users may query about fav
 
 This application is built utilizing the Mern Stack. Below is a more detailed description of the Tech and the intent if there was reason aside from convenience.
 
-      React: I used React as my front end frame work so that I can work more with using Hooks and its functional state 
-      management. The other goal was to limit the amount of redundant code to none. One of the tricky parts of this 
-      project for me was figuring how to handle 2 similar but different JSON Objects within a single component so that 
-      it conditionally rendered. This was done inside of the "BookCard" component
+   React: I used React as my front end frame work so that I can work more with using Hooks and its functional state management. The other goal was to limit the amount of redundant code to none. One of the tricky parts of this project for me was figuring how to handle 2 similar but different JSON Objects within a single component so that it conditionally rendered. This was done inside of the "BookCard" component
       
-      React-Router-Dom
+   React-Router-Dom
       
-      React-Bootstrap: The main goal here was to use solely Bootstrap for styling and responsiveness of the application.
+   React-Bootstrap: The main goal here was to use solely Bootstrap for styling and responsiveness of the application.
       MongoDB and Mongoose: I picked MongoDB so that I can diversify my experience from MySQL and Sequelize. 
       This was a learning experience and there was a lot of referenceing the documentation for understanding.
       
-      Node.js
+   Node.js
       
-      Express.js
+   Express.js
       
-      axios
+   axios
       
-      Google API
+   Google API
       
 If You have any questions please feel free to reach out. I have more plans for this application such as adding in user functionality like being able create an account to log in with as well as being able to interact with friends and their saved book collection.
