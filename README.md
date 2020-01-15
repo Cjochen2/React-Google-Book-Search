@@ -16,13 +16,13 @@ This application is built utilizing the Mern Stack. Below is a more detailed des
       MongoDB and Mongoose: I picked MongoDB so that I can diversify my experience from MySQL and Sequelize. 
       This was a learning experience and there was a lot of referenceing the documentation for understanding.
       
-   **Node.js
+   **Node.js**
       
-   **Express.js
+   **Express.js**
       
-   **axios
+   **axios**
       
-   **Google API
+   **Google API**
 
 
 If You have any questions please feel free to reach out. I have more plans for this application such as adding in user functionality like being able create an account to log in with as well as being able to interact with friends and their saved book collection.
