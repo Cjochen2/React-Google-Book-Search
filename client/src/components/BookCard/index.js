@@ -28,6 +28,20 @@ const BookCard = ({ book, pageCheck, getSaved }) => {
         getSaved();
     }
 
+    const renderAuthors = () => {
+
+        switch (bookInfo.authors.length) {
+            case 2:
+                return bookInfo.authors[0] + " and " + bookInfo.authors[1];
+
+            case 3:
+                return bookInfo.authors[0] + ", " + bookInfo.authors[1] + ", and " + bookInfo.authors[2];
+
+            default:
+                return bookInfo.authors
+        }
+    }
+
 
 
     return (
@@ -38,7 +52,7 @@ const BookCard = ({ book, pageCheck, getSaved }) => {
                     <Modal.Title>{pageCheck ? "Book Deleted!" : "Book Saved!"}</Modal.Title>
                 </Modal.Header>
 
-                <Modal.Body>{bookInfo.title} by {bookInfo.authors} has been {pageCheck ? "deleted!" : "saved!"}</Modal.Body>
+                <Modal.Body>{bookInfo.title} by {renderAuthors()} has been {pageCheck ? "deleted!" : "saved!"}</Modal.Body>
 
             </Modal>
             <div className='row'>
@@ -50,7 +64,7 @@ const BookCard = ({ book, pageCheck, getSaved }) => {
             </div>
             {/* Need to generate formula for handling more than one Author */}
             <div className='row'>
-                <div className='author'>Written By: {bookInfo.authors}</div>
+                <div className='author'>Written By: {renderAuthors()}</div>
             </div>
             <div className='row'>
                 <div className='col-4 text-center'>
