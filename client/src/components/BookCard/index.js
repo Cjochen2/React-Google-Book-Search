@@ -49,8 +49,6 @@ const BookCard = ({ book, pageCheck, getSaved }) => {
     }
     }
 
-
-
     return (
 
         <div className='bookCard container mt-3 mb-5'>
@@ -72,7 +70,7 @@ const BookCard = ({ book, pageCheck, getSaved }) => {
                 />
                 {pageCheck ? <Delete remove={deleteBook} id={book.id} /> : <Save save={saveBook} book={book} />}
             </div>
-            {/* Need to generate formula for handling more than one Author */}
+           
             <div className='row'>
                 <h5 className='author pl-4 mb-3'>{bookInfo.authors ? 'Written By:' : null} {renderAuthors()}</h5>
             </div>
