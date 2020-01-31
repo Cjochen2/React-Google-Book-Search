@@ -3,6 +3,7 @@ import { Save, View, Delete } from '../Buttons'
 import API from '../../utils/API'
 import Modal from 'react-bootstrap/Modal'
 
+
 const BookCard = ({ book, pageCheck, getSaved }) => {
 
     const [show, setShow] = useState(false)
@@ -30,7 +31,10 @@ const BookCard = ({ book, pageCheck, getSaved }) => {
 
     const renderAuthors = () => {
 
+        if(bookInfo.authors) {
+
         switch (bookInfo.authors.length) {
+            
             case 2:
                 return bookInfo.authors[0] + " and " + bookInfo.authors[1];
 
@@ -40,6 +44,9 @@ const BookCard = ({ book, pageCheck, getSaved }) => {
             default:
                 return bookInfo.authors
         }
+    } else {
+        return "Unable to locate Author's Information"
+    }
     }
 
 
@@ -47,16 +54,19 @@ const BookCard = ({ book, pageCheck, getSaved }) => {
     return (
 
         <div className='bookCard container mt-3 mb-5'>
+
             <Modal show={show} onHide={() => pageCheck ? updateSavedPage() : setShow(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>{pageCheck ? "Book Deleted!" : "Book Saved!"}</Modal.Title>
                 </Modal.Header>
 
-                <Modal.Body>{bookInfo.title} by {renderAuthors()} has been {pageCheck ? "deleted!" : "saved!"}</Modal.Body>
+                <Modal.Body><strong>{bookInfo.title}</strong> has been {pageCheck ? "deleted!" : "saved!"}</Modal.Body>
 
             </Modal>
+
+
             <div className='row'>
-                <div className='title col-8 text-left pl-0'>{bookInfo.title}</div>
+                <h3 className='title col-8 text-left pl-4 pt-3'>{bookInfo.title}</h3>
                 <View
                     href={bookInfo.infoLink}
                 />
@@ -64,14 +74,14 @@ const BookCard = ({ book, pageCheck, getSaved }) => {
             </div>
             {/* Need to generate formula for handling more than one Author */}
             <div className='row'>
-                <div className='author'>Written By: {renderAuthors()}</div>
+                <h5 className='author pl-4 mb-3'>{bookInfo.authors ? 'Written By:' : null} {renderAuthors()}</h5>
             </div>
             <div className='row'>
-                <div className='col-4 text-center'>
-                    <img src={bookImage} alt={bookInfo.title} className="img-fluid img-thumbnail" />
+                <div className='col-4 my-auto'>
+                    <img src={bookImage} alt={bookInfo.title} className="img-fluid img-thumbnail mb-3" />
                 </div>
-                <div className='col-8'>
-                    {bookInfo.description}
+                <div className='description col-8 p-3'>
+                    {bookInfo.description ? bookInfo.description : <h2>No Description to display</h2>}
                 </div>
             </div>
         </div>

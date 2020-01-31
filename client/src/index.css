@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +13,34 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button > a:link {
+  text-decoration: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.bookCard {
+  background-color: lightgray;
+  border-radius: 2px;
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+}
+
+.btn:hover {
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+}
+
+.description {
+  font-family: 'Roboto Slab', serif;
+}
+
+.header {
+  border-bottom: 2px solid black;
+}
+
+.jumbotron {
+  background-color: cornflowerblue;
+  color: white;
 }

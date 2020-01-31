@@ -19,7 +19,7 @@ const SavedPage = () => {
     return (
         <div className='saved'>
         <div className='row justify-content-center'>
-            <div className='col-8'>
+            <div className='col-8 header'>
                 <h1 className='float-left'>Saved Books:</h1>
             </div>
         </div>

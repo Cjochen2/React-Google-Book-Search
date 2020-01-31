@@ -10,7 +10,7 @@ const Results = ({ data, pageCheck, getSaved }) => {
         <div>
             <div className='row justify-content-center'>
                 <div className='col-8'>
-                    {data.map((item, index) => <BookCard book={item} key={index + 1} pageCheck={pageCheck} getSaved={getSaved} />)}
+                    {!data ? "No Results to Display" : data.map((item, index) => <BookCard book={item} key={index + 1} pageCheck={pageCheck} getSaved={getSaved} />)}
                 </div>
             </div>
         </div>
