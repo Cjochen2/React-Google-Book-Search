@@ -25,4 +25,4 @@ This application is built utilizing the Mern Stack. Below is a more detailed des
    **Google API**
 
 
-If You have any questions please feel free to reach out. I have more plans for this application such as adding in user functionality like being able create an account to log in with as well as being able to interact with friends and their saved book collection.
+If You have any questions please feel free to reach out. This app is still being worked on and updated though in its current state it is completely functional!
