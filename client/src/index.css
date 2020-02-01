@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
 
 * {
   box-sizing: border-box;
@@ -11,6 +12,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./assets/images/spikes.png');
 }
 
 button > a:link {
@@ -43,4 +45,9 @@ code {
 .jumbotron {
   background-color: cornflowerblue;
   color: white;
+}
+
+.test {
+  font-family: 'Anton', sans-serif;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }

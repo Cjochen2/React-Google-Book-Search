@@ -1,24 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
 
-const Nav = () => {
+const NavHeader = () => {
 
     return (
-        <nav className='navbar navbar-expand-lg'>
-            <h3 className='navbar-brand'>Cujo's Book Search App</h3>
-            {/* Navbar options disappear at 1000px width. It is caused by the collapse className */}
-            <div className='collapse navbar-collapse'>
-                <div className='navbar-nav'>
-                    <div className='p-2'>
-                        <Link to='/'>Search</Link>
-                    </div>
-                    <div className='p-2'>
-                        <Link to='/saved'>Saved</Link>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <Navbar expand='sm'>
+            <Navbar.Brand>Cujo's Book Search App</Navbar.Brand>
+            <Navbar.Toggle aria-controls='basic-navbar-nav' />
+            <Navbar.Collapse id='basic-navbar-nav'>
+                <Nav className='mr-auto'>
+                    <Link to='/' className='p-2'>Search</Link>
+                    <Link to='/saved' className='p-2'>Saved</Link>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
     )
 }
 
-export default Nav
+export default NavHeader
