@@ -31,22 +31,22 @@ const BookCard = ({ book, pageCheck, getSaved }) => {
 
     const renderAuthors = () => {
 
-        if(bookInfo.authors) {
+        if (bookInfo.authors) {
 
-        switch (bookInfo.authors.length) {
-            
-            case 2:
-                return bookInfo.authors[0] + " and " + bookInfo.authors[1];
+            switch (bookInfo.authors.length) {
 
-            case 3:
-                return bookInfo.authors[0] + ", " + bookInfo.authors[1] + ", and " + bookInfo.authors[2];
+                case 2:
+                    return bookInfo.authors[0] + " and " + bookInfo.authors[1];
 
-            default:
-                return bookInfo.authors
+                case 3:
+                    return bookInfo.authors[0] + ", " + bookInfo.authors[1] + ", and " + bookInfo.authors[2];
+
+                default:
+                    return bookInfo.authors
+            }
+        } else {
+            return "Unable to locate Author's Information"
         }
-    } else {
-        return "Unable to locate Author's Information"
-    }
     }
 
     return (
@@ -64,21 +64,21 @@ const BookCard = ({ book, pageCheck, getSaved }) => {
 
 
             <div className='row'>
-                <h3 className='title col-8 text-left pl-4 pt-3'>{bookInfo.title}</h3>
+                <div className="col-sm-8" >
+                    <h3 className='title text-left pl-4 pt-3'>{bookInfo.title}</h3>
+                    <h5 className='author text-left pl-4 mb-3'>{bookInfo.authors ? 'Written By:' : null} {renderAuthors()}</h5>
+                </div>
                 <View
                     href={bookInfo.infoLink}
                 />
                 {pageCheck ? <Delete remove={deleteBook} id={book.id} /> : <Save save={saveBook} book={book} />}
             </div>
-           
+            
             <div className='row'>
-                <h5 className='author pl-4 mb-3'>{bookInfo.authors ? 'Written By:' : null} {renderAuthors()}</h5>
-            </div>
-            <div className='row'>
-                <div className='col-4 my-auto'>
+                <div className='col-lg-4 my-auto'>
                     <img src={bookImage} alt={bookInfo.title} className="img-fluid img-thumbnail mb-3" />
                 </div>
-                <div className='description col-8 p-3'>
+                <div className='description col-lg-8 p-3'>
                     {bookInfo.description ? bookInfo.description : <h2>No Description to display</h2>}
                 </div>
             </div>

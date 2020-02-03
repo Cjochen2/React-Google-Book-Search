@@ -8,10 +8,8 @@ module.exports = {
     },
 
     saveBook: (req, res) => {
-        console.log(req.body)
         let bookInfo = req.body.volumeInfo
-
-
+        
         db.Book
             .create({
                 id: req.body.id,
