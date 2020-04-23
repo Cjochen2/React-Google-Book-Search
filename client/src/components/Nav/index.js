@@ -16,7 +16,7 @@ const NavHeader = () => {
                     <Nav className='mr-auto'>
                         <Link to='/' className='p-2'>Search</Link>
                         <Link to='/saved' className='p-2'>Saved</Link>
-                        <Link className='p-2' onClick={() => setShow(true)}>About</Link>
+                        <Link to = '' className='p-2' onClick={() => setShow(true)}>About</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

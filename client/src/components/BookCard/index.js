@@ -33,21 +33,27 @@ const BookCard = ({ book, pageCheck, getSaved }) => {
 
         if (bookInfo.authors) {
 
-            switch (bookInfo.authors.length) {
+            let authors = bookInfo.authors;
+            let authorUpdate = [];
 
-                case 2:
-                    return bookInfo.authors[0] + " and " + bookInfo.authors[1];
+            authors.forEach((a, i) => {
+                if (i === 0) {
+                    authorUpdate.push(a);
+                }
+                else if (i === authors.length - 1) {
+                    authorUpdate.push(' and ' + a)
+                }
+                else {
+                    authorUpdate.push(', ' + a)
+                }
+            });
 
-                case 3:
-                    return bookInfo.authors[0] + ", " + bookInfo.authors[1] + ", and " + bookInfo.authors[2];
+            return authorUpdate;
 
-                default:
-                    return bookInfo.authors
-            }
         } else {
             return "Unable to locate Author's Information"
-        }
-    }
+        };
+    };
 
     return (
 
@@ -73,7 +79,7 @@ const BookCard = ({ book, pageCheck, getSaved }) => {
                 />
                 {pageCheck ? <Delete remove={deleteBook} id={book.id} /> : <Save save={saveBook} book={book} />}
             </div>
-            
+
             <div className='row'>
                 <div className='col-lg-4 my-auto'>
                     <img src={bookImage} alt={bookInfo.title} className="img-fluid img-thumbnail mb-3" />
