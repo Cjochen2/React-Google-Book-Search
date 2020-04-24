@@ -10,7 +10,15 @@ const BookCard = ({ book, pageCheck, getSaved }) => {
 
     let bookInfo = (pageCheck) ? book : book.volumeInfo
     //Fails when there is no image or undefined at book.volumeInfo.imageLinks.thumbnail
-    let bookImage = (pageCheck) ? book.image : book.volumeInfo.imageLinks.thumbnail
+    //let bookImage = (pageCheck) ? book.image : book.volumeInfo.imageLinks.thumbnail
+
+    let bookImage = () => {
+        if (!pageCheck) {
+            return book.volumeInfo.imageLinks !== undefined ? book.volumeInfo.imageLinks.thumbnail : require('../../assets/images/noImage.jpg')
+        } else {
+            return book.image
+        }
+    }
 
     const saveBook = (data) => {
         API.saveBook(data)
@@ -83,7 +91,7 @@ const BookCard = ({ book, pageCheck, getSaved }) => {
 
             <div className='row'>
                 <div className='col-lg-4 my-auto'>
-                    <img src={bookImage} alt={bookInfo.title} className="img-fluid img-thumbnail mb-3" />
+                    <img src={bookImage()} alt={bookInfo.title} className="img-fluid img-thumbnail mb-3" />
                 </div>
                 <div className='description col-lg-8 p-3'>
                     {bookInfo.description ? bookInfo.description : <h2>No Description to display</h2>}
