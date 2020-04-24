@@ -9,6 +9,7 @@ const BookCard = ({ book, pageCheck, getSaved }) => {
     const [show, setShow] = useState(false)
 
     let bookInfo = (pageCheck) ? book : book.volumeInfo
+    //Fails when there is no image or undefined at book.volumeInfo.imageLinks.thumbnail
     let bookImage = (pageCheck) ? book.image : book.volumeInfo.imageLinks.thumbnail
 
     const saveBook = (data) => {

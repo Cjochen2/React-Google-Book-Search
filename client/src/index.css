@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Girassol&display=swap');
 
 * {
   box-sizing: border-box;
@@ -47,7 +48,8 @@ code {
   color: white;
 }
 
-.antonFont {
-  font-family: 'Anton', sans-serif;
+.headerFont {
+  font-family: 'Girassol', cursive;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 4vw;
 }

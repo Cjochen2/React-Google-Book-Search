@@ -31,7 +31,7 @@ const SearchBar = ({ results }) => {
                 <h3 className='float-left mb-3'>Book Search:</h3>
                 <form onSubmit={query}>
                     <input className='form-control' type='text' value={searchTerm} placeholder='Search by Author or Title' onChange={updateSearchTerm}></input>
-                    <button type='button' className='btn float-right mt-3' onClick={query}>Search</button>
+                    <button type='button' className='btn btn-primary float-right mt-3' onClick={query}>Search</button>
                 </form>
             </div>
         </div>
